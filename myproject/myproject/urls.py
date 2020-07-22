@@ -13,9 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
+from django.conf import settings
 
 def mysum(request,x,y):
     result = x+y
@@ -27,3 +29,17 @@ urlpatterns = [
     path('blog/',include('blog.urls')),
     path('shop/',include('shop.urls')),
 ]
+
+# if settings.DEBUG:
+#     import debug_toolbar
+#     urlpatterns += [
+#         path('__debug__/',include(debug_toolbar.urls)),
+#
+#     ]
+
+# if settings.DEBUG:
+#     import debug_toolbar
+#     urlpatterns += [
+#         url(r'^__debug__/', include(debug_toolbar.urls)),
+#     ]
+
