@@ -6,7 +6,8 @@ class Profile(models.Model):
     blog_url = models.URLField(blank=True)
 
 class Post(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author_name=models.CharField(max_length=20)
+
     content = models.TextField()
     title = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(allow_unicode=True, db_index=True)
