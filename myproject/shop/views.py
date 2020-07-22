@@ -16,9 +16,13 @@ def test_view(request):
 
 
 def item_list(request):
-    qs=Item.objects.all()
-    return render(request,'shop/Item_list.html',{
-        'item_list':qs,
+    qs = Item.objects.all()
+    q = request.GET.get('q', '')
+    if q:
+        qs = qs.filter(name__icontains=q)
+    return render(request, 'shop/item_list.html', {
+        'item_list': qs,
+        'q':q,
     })
 
 def archives_year(request,year):
