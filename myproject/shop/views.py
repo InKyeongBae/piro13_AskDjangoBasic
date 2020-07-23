@@ -1,4 +1,4 @@
-
+import logging
 from .models import Item
 # Create your views here.
 from django.http import HttpResponseRedirect,HttpResponse
@@ -12,7 +12,7 @@ def view3(request):
 
 def test_view(request):
     return HttpResponse(status=201)
-
+logger = logging.getLogger(__name__)
 
 
 def item_list(request):
@@ -20,6 +20,9 @@ def item_list(request):
     q = request.GET.get('q', '')
     if q:
         qs = qs.filter(name__icontains=q)
+
+    logger.debug('query : {}'.format(q))
+
     return render(request, 'shop/item_list.html', {
         'item_list': qs,
         'q':q,
