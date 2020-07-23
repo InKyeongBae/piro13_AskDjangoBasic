@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1f5ou*hd3g9-^_*(ltm^4q11sgn^*2!56jg=tv0zeule4ot*-x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -152,6 +152,24 @@ LOGGING = {
         },
     }
 }
+
+TEMPLATES = [
+    {
+        'BACKEND':'django.template.backends.django.DjangoTemplates',
+        'DIRS':[
+            os.path.join(BASE_DIR,'myproject','templates'),
+        ],
+        'APP_DIRS':True,
+        'OPTIONS':{
+            'context_processors' : [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
 
 STATIC_URL = '/static/'

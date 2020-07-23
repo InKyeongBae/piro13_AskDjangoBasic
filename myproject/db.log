@@ -22,3 +22,16 @@
             ORDER BY name; args=None
 (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=()
 (0.000) SELECT "shop_item"."id", "shop_item"."name", "shop_item"."desc", "shop_item"."price", "shop_item"."created_at", "shop_item"."updated_at" FROM "shop_item" WHERE "shop_item"."name" LIKE '%iphone%' ESCAPE '\' ORDER BY "shop_item"."id" ASC; args=('%iphone%',)
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=()
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=()
+(0.000) SELECT "shop_item"."id", "shop_item"."name", "shop_item"."desc", "shop_item"."price", "shop_item"."created_at", "shop_item"."updated_at" FROM "shop_item" WHERE "shop_item"."name" LIKE '%iphone%' ESCAPE '\' ORDER BY "shop_item"."id" ASC; args=('%iphone%',)
+(0.016) SELECT "shop_item"."id", "shop_item"."name", "shop_item"."desc", "shop_item"."price", "shop_item"."created_at", "shop_item"."updated_at" FROM "shop_item" WHERE "shop_item"."name" LIKE '%iphone%' ESCAPE '\' ORDER BY "shop_item"."id" ASC; args=('%iphone%',)
+(0.000) SELECT "shop_item"."id", "shop_item"."name", "shop_item"."desc", "shop_item"."price", "shop_item"."created_at", "shop_item"."updated_at" FROM "shop_item" ORDER BY "shop_item"."id" ASC; args=()
