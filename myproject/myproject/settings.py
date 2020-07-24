@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1f5ou*hd3g9-^_*(ltm^4q11sgn^*2!56jg=tv0zeule4ot*-x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django_extensions',
     # 'django_jinja',
     # 'debug_toolbar',
-
+    'common',
     'shop',
     'blog',
 ]
