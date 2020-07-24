@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_extensions',
+    # 'django_jinja',
     # 'debug_toolbar',
 
     'shop',
@@ -60,8 +61,18 @@ ROOT_URLCONF = 'myproject.urls'
 
 TEMPLATES = [
     {
+        'BACKEND' : 'django_jinja.backend.Jinja2',
+        'APP_DIRS':True,
+        'OPTIONS':{
+            'match_extension':'.jinja',
+        }
+    },
+
+    {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR,'myproject','templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -154,6 +165,14 @@ LOGGING = {
 }
 
 TEMPLATES = [
+    {
+        'BACKEND':'django_jinja.backend.Jinja2',
+        'APP_DIRS':True,
+        'OPTIONS': {
+            'match_extension':'.jinja',
+        },
+    },
+
     {
         'BACKEND':'django.template.backends.django.DjangoTemplates',
         'DIRS':[
