@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
+from django.conf.urls.static import static
 from django.conf import settings
 
 def mysum(request,x,y):
@@ -29,6 +30,7 @@ urlpatterns = [
     path('blog/',include('blog.urls')),
     path('shop/',include('shop.urls')),
 ]
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 # if settings.DEBUG:
 #     import debug_toolbar

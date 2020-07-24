@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from myproject.utils import uuid_upload_to
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -7,7 +8,7 @@ class Profile(models.Model):
 
 class Post(models.Model):
     author_name=models.CharField(max_length=20,null=True,blank=True)
-
+    photo = models.ImageField(upload_to=uuid_upload_to)
     content = models.TextField()
     title = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(allow_unicode=True, db_index=True)
