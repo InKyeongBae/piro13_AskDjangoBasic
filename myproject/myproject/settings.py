@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'django.contrib.humanize',
     'django_extensions',
     # 'django_jinja',
     # 'debug_toolbar',
@@ -165,14 +165,6 @@ LOGGING = {
 }
 
 TEMPLATES = [
-    {
-        'BACKEND':'django_jinja.backend.Jinja2',
-        'APP_DIRS':True,
-        'OPTIONS': {
-            'match_extension':'.jinja',
-        },
-    },
-
     {
         'BACKEND':'django.template.backends.django.DjangoTemplates',
         'DIRS':[

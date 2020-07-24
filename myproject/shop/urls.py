@@ -20,5 +20,6 @@ urlpatterns = [
     path('items/',item_list,name='item_list'),
     path('shop/',views.item_list),
     path('archives/<yyyy:year>/',views.archives_year),
-    path('',views.item_list)
+    path('',views.item_list),
+    path('<int:pk>/',views.item_detail),
 ]
