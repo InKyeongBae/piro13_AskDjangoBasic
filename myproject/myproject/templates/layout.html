@@ -1,11 +1,14 @@
+{% load static %}
 <!doctype html>
 <html>
     <head>
         <meta charset="utf-8"/>
-{#        <title>my project1</title>#}
+        <title>{% block title %}myproject1{% endblock %}</title>
         <style>
-            body {background-color: lightblue;}
+            body {background-color: lightpink;}
         </style>
+        <link rel="stylesheet" href="{% static "main.css" %}" />
+        {% block extra_head %}{% endblock %}
     </head>
     <body>
         <h1>InKyeongBae project</h1>
@@ -13,6 +16,9 @@
         {% endblock %}
 
         <hr/>
-        &copy;2020.piro13.
+        &copy;2020.piro13
+        {% block extra_body %}
+            <script src="{% static "main.js" %}"></script>
+        {% endblock %}
     </body>
 </html>

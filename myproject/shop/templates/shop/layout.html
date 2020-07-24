@@ -1,1 +1,15 @@
 {% extends "layout.html" %}
+{% load static %}
+{% block title %}Shop by Project1{% endblock %}
+
+{% block extra_head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static "shop/shop.css" %}"/>
+    <style>
+
+    </style>
+{% endblock %}
+
+{% block extra_body %}
+    {{ block.super }}
+{% endblock %}
