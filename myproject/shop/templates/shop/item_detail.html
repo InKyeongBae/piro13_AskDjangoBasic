@@ -15,5 +15,6 @@
             </p>
         {% endif %}
         <hr/>
-        <a href="/shop">목록링크</a>
+        <a href="{% url "shop:item_list" %}">목록링크</a>
+        <a href="{% url "shop:item_edit" item.pk %}">수정링크</a>
     {% endblock %}
