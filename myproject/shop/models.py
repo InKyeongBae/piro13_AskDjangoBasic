@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.urls import reverse
 from myproject.utils import uuid_upload_to
 # Create your models here.
 
@@ -13,6 +14,9 @@ class Item(models.Model):
     photo = models.ImageField(blank=True,upload_to=uuid_upload_to)
     def __str__(self):
         return f'<{self.pk}>{self.name}'
+
+    def get_absolute_url(self):
+        return reverse('shop:item_detail',kwargs={'pk':self.pk})
 
     class Meta:
         ordering = ['id']

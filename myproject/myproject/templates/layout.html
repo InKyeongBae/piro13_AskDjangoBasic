@@ -1,4 +1,4 @@
-{% load static fresh_static%}
+{% load static static%}
 <!doctype html>
 <html>
     <head>
@@ -7,7 +7,7 @@
         <style>
             body {background-color: lightpink;}
         </style>
-        <link rel="stylesheet" href="{% fresh_static "main.css" %}" />
+        <link rel="stylesheet" href="{% static "main.css" %}" />
         {% block extra_head %}{% endblock %}
     </head>
     <body>

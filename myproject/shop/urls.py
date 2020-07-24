@@ -19,7 +19,7 @@ urlpatterns = [
     # path('<int:item_id>/reviews/<int:id>/delete/$', views.review_delete, name='review_delete'),
     path('items/',item_list,name='item_list'),
     path('shop/',views.item_list),
-    path('archives/<yyyy:year>/',views.archives_year),
+    path('archives/<yyyy:year>/',views.archives_year, name='archives_year'),
     path('',views.item_list),
-    path('<int:pk>/',views.item_detail),
+    path('<int:pk>/',views.item_detail,name='item_detail'),
 ]
