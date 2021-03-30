@@ -1,4 +1,4 @@
-django == 3.0.8
+django == 3.0.12
 django-extensions == 3.0.3
 django-jinja == 2.6.0
 pillow
